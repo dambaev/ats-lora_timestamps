@@ -58,10 +58,21 @@ fn
   val () = free src
 }  
 
+fn
+  test6(): void = {
+  val src = $BS.pack "2020-09-09T09:09:09.0Z"
+  val- ~Some_vt( @(secs, nsecs) ) = $TS.lora_timestamp2timespec( src)
+  //val () = println!( "secs = ", secs, ", nsecs=", nsecs)
+  val () = assertloc( secs = $UN.cast{int32} 1599642549)
+  val () = assertloc( nsecs = $UN.cast{uint32} 0)
+  val () = free src
+}  
+
 implement main0() = {
   val () = test1()
-//  val () = test2()
-//  val () = test3()
-//  val () = test4()
-//  val () = test5()
+  val () = test2()
+  val () = test3()
+  val () = test4()
+  val () = test5()
+  val () = test6()
 }
