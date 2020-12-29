@@ -64,7 +64,6 @@ RMF=rm -f
 ######
 #
 clean:: ; $(RMF) test*
-clean:: ; $(RMF) ttn2clevair-vicpack
 clean:: ; $(RMF) *~
 clean:: ; find -name '*_?ats.o' -exec $(RMF) {} \;
 clean:: ; find -name '*_?ats.c' -exec $(RMF) {} \;
